@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PIN Guessing Game</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+    input { font-size: 20px; padding: 5px; width: 100px; text-align: center; }
+    button { font-size: 20px; padding: 5px 10px; }
+    .message { margin-top: 20px; font-size: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Guess the 4-Digit PIN</h1>
+  <input type="text" id="pinInput" maxlength="4" placeholder="0000">
+  <button onclick="checkPin()">Guess</button>
+  <div class="message" id="message"></div>
+
+  <script>
+    function checkPin() {
+      const correctPin = '5409';
+      const userGuess = document.getElementById('pinInput').value;
+      const messageDiv = document.getElementById('message');
+
+      if (userGuess === correctPin) {
+        messageDiv.textContent = '🎉 Correct! You win! 🎉';
+        messageDiv.style.color = 'green';
+      } else {
+        messageDiv.textContent = '❌ Wrong PIN. Try again!';
+        messageDiv.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
